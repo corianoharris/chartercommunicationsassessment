@@ -16,22 +16,18 @@ const App = () => {
   return (
     <div className="App">
       <h1>Transcation Records</h1>{" "}
-      {records
-        .map((record) => (
-          <div key={record.id} className="records">
-            UserId: {record.id} || Date: {record.transcationDate}
-            {"  "} || Price: {record.price}
-            {"  "} || Reward:
-            {record.price > 50 && record.price <= 100
-              ? record.price - 50
-              : record.price > 100
-              ? 2 * (record.price - 100)
-              : 0}
-          </div>
-        ))
-        .sort(function (a, b) {
-          return a.transcationDate - b.transcationDate;
-        })}
+      {records.map((record) => (
+        <div key={record.id} className="records">
+          UserId: {record.id} || Date: {record.transcationDate}
+          {"  "} || Price: {record.price}
+          {"  "} || Reward:
+          {record.price > 50 && record.price <= 100
+            ? record.price - 50
+            : record.price > 100
+            ? 2 * (record.price - 100)
+            : 0}
+        </div>
+      ))}
     </div>
   );
 };
