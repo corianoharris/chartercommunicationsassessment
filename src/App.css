@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+.records {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 20px;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  width: 500px;
+  border-radius: 4rem;
+}

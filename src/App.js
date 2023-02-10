@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [records, setRecords] = useState([]);
+
+  useEffect(() => {
+    const getAPI = async () => {
+      await fetch("http://localhost:3000/mockData.json")
+        .then((res) => res.json())
+        .then((data) => setRecords(data));
+    };
+    getAPI();
+  }, [records]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Transcation Records</h1>{" "}
+      {records
+        .map((record) => (
+          <div key={record.id} className="records">
+            UserId: {record.id} || Date: {record.transcationDate}
+            {"  "} || Price: {record.price}
+            {"  "} || Reward:
+            {record.price > 50 && record.price <= 100
+              ? record.price - 50
+              : record.price > 100
+              ? 2 * (record.price - 100)
+              : 0}
+          </div>
+        ))
+        .sort(function (a, b) {
+          return a.transcationDate - b.transcationDate;
+        })}
     </div>
   );
-}
+};
 
 export default App;
