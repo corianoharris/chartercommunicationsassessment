@@ -2,37 +2,31 @@
   {
     "id": 1,
     "price": 120,
-    "transcationDate": "2022/11/05",
-    "reward": 10
+    "transcationDate": "2023-1-10 12:00:00",
+    "reward": 0
   },
   {
     "id": 2,
     "price": 80,
-    "transcationDate": "2023/02/08",
+    "transcationDate": "2022-09-10 12:00:00",
     "reward": 0
   },
   {
     "id": 3,
-    "price": 220,
-    "transcationDate": "2023/02/05",
+    "price": 50,
+    "transcationDate": "2023-01-30 12:00:00",
     "reward": 0
   },
   {
     "id": 4,
-    "price": 50,
-    "transcationDate": "2023/01/05",
+    "price": 200,
+    "transcationDate": "2022-11-12 12:00:00",
     "reward": 0
   },
   {
     "id": 5,
-    "price": 99,
-    "transcationDate": "2022/12/05",
-    "reward": 0
-  },
-  {
-    "id": 6,
-    "price": 100,
-    "transcationDate": "2022/02/05",
+    "price": 180,
+    "transcationDate": "2023-02-09 12:00:00",
     "reward": 0
   }
 ]

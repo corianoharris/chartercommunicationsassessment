@@ -4,6 +4,18 @@ import "./App.css";
 const App = () => {
   const [records, setRecords] = useState([]);
 
+  const getLastThreeMonthsRecords = () => {
+    const currentMonth = new Date().getMonth();
+    const filterRecords = records.filter(
+      (record) =>
+        Math.floor(
+          new Date(record.transcationDate).getMonth() - currentMonth
+        ) <= 3
+    );
+
+    setRecords(filterRecords);
+  };
+
   useEffect(() => {
     const getAPI = async () => {
       await fetch("http://localhost:3000/mockData.json")
@@ -11,7 +23,8 @@ const App = () => {
         .then((data) => setRecords(data));
     };
     getAPI();
-  }, [records]);
+    getLastThreeMonthsRecords();
+  }, []);
 
   return (
     <div className="App">
